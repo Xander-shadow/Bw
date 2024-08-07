@@ -2,18 +2,26 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
+    background-image: url('pixel-car.png'), url('pixel-car.png');
+    background-repeat: repeat-x, repeat-x;
+    background-position: top left, bottom right;
+    background-size: 200px 100px;
 }
 
 .container {
     text-align: center;
     padding: 20px;
+    position: relative;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 header {
     background-color: #333;
     color: white;
     padding: 20px;
-    margin-bottom: 20px;
 }
 
 h1 {
@@ -21,36 +29,47 @@ h1 {
     font-size: 2.5em;
 }
 
-.car-theme {
-    position: relative;
-    display: inline-block;
-}
-
-.car-image {
-    width: 300px;
-    height: auto;
-}
-
 .wish-box {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.9);
     padding: 20px;
     border-radius: 10px;
+    margin: auto;
+    max-width: 80%;
 }
 
 #wish-paragraph {
-    font-size: 1.2em;
+    font-size: 1.5em;
     color: #333;
+    margin: 0;
+}
+
+.party-poppers {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.popper {
+    width: 100px;
+    height: auto;
+    animation: popper-animation 1s infinite;
+}
+
+@keyframes popper-animation {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(20deg);
+    }
 }
 
 footer {
     background-color: #333;
     color: white;
     padding: 10px;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
 }
